@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SlideShow = Tab</title>
+	<style type="text/css">
+		#box{
+			width: 500px;
+			margin: auto;
+			border :10px solid blue;
+		}
+		#box header{
+			list-style: none;margin: 0px;padding: 0px;
+		}
+		#box header ul li{
+			display: inline-block;//bỏ dấu chấm
+			padding: 10px;
+			cursor: pointer;
+		}
+		.images{
+			min-height: 200px;
+			display: none;
+		}
+		#box section img {
+			width: 100%;
+			height: 100%;
+
+		}
+
+	</style>
+</head>
+<body>
+	<script type="text/javascript" src="jr/jquery-3.4.1.min.js">
+	</script>
+
+	<div id="box">
+		<header>
+			<ul>
+				<li data-tab='anh1'>A</li>
+				<li data-tab='anh2'>B</li>
+				<li data-tab='anh3'>C</li>
+				<li data-tab='anh4'>D</li>
+				<li data-tab='anh5'>E</li>
+				<li data-tab='anh6'>F</li>
+				<li data-tab='anh7'>G</li>
+				<li data-tab='anh11'>H</li>
+				<li data-tab='anh111'>I</li>
+			</ul>
+		</header>
+		<section>
+			<img id="anh1" class="images" src="img/anh1.jpg">
+			<img id="anh2" class="images" src="img/anh2.jpg">
+			<img id="anh3" class="images" src="img/anh3.jpg">
+			<img id="anh4" class="images" src="img/anh4.jpg">
+			<img id="anh5" class="images" src="img/anh5.jpg">
+			<img id="anh6" class="images" src="img/anh6.jpg">
+			<img id="anh7" class="images" src="img/anh7.jpg">
+			<img id="anh11" class="images" src="img/anh11.jpg">
+			<img id="anh111" class="images" src="img/anh111.jpg">
+		</section>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('#box header ul li').click(function(){
+				var id =$(this).attr('data-tab');
+				$('#box section img[class=images]').hide(500);
+				$('#box section img[id='+id+']').show(500);
+			})
+		})
+	</script>
+</body>
+</html>
